@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* .category-card {
+            margin-bottom: 20px;
+            cursor: pointer;
+            width: 20%;
+        } */
+        .category-card {
+    width: 20%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Example background color */
+    position: relative; /* To control the shadow more easily */
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 128, 255, 0.5), 0 4px 25px rgba(255, 105, 180, 0.4); /* Reflexive color shadow */
+}
+
+
+        .category-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .category-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn-category {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        /* .product-card {
+            width: 22%;
+            margin-bottom: 30px;
+            cursor: pointer;
+        } */
+        .product-card {
+    width: 22%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Example background color */
+    position: relative; /* To control the shadow more easily */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 128, 255, 0.5), 0 4px 25px rgba(255, 105, 180, 0.4);
+}
+
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .product-price {
+            color: #f39c12;
+            font-size: 1.2em;
+        }
+
+        
+.navbar {
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+  
+    .navbar-brand:hover {
+      color: red;
+    }
+  
+    .navbar-nav .nav-item .nav-link {
+      font-size: 16px;
+      padding: 10px 15px;
+      color: #555;
+      font-family: 'Arial', sans-serif;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+  
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #fff;
+      background-color: violet;
+      border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Ankush Store</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="sports.html">Sports</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">about</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Categories Section -->
+<div class="container category-container">
+    <div class="card category-card" onclick="showProducts('electronics')">
+        <img src="https://img.freepik.com/premium-photo/tv-laptop-notebook-tablet-metal-touchscreen-smartphone_252025-55.jpg" class="card-img-top category-img" alt="Electronics">
+        <div class="card-body">
+            <h5 class="category-title">Electronics</h5>
+            <button class="btn btn-primary btn-category">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="card category-card" onclick="showProducts('clothing')">
+        <img src="https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg" class="card-img-top category-img" alt="Clothing">
+        <div class="card-body">
+            <h5 class="category-title">Clothing</h5>
+            <button class="btn btn-primary btn-category">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="card category-card" onclick="showProducts('sports')">
+        <img src="https://sk0.blr1.cdn.digitaloceanspaces.com/sites/122978/posts/268866/sports.jpg" class="card-img-top category-img" alt="Sports">
+        <div class="card-body">
+            <h5 class="category-title">Sports</h5>
+            <button class="btn btn-primary btn-category">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="card category-card" onclick="showProducts('home')">
+        <img src="https://thumbs.dreamstime.com/b/home-decorations-shop-interior-decor-decoration-articles-various-items-whole-series-sebczseries-keyword-91167548.jpg" class="card-img-top category-img" alt="Home">
+        <div class="card-body">
+            <h5 class="category-title">Home</h5>
+            <button class="btn btn-primary btn-category">Shop Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Products Section (Initially hidden) -->
+<div id="productSection" class="container product-container" style="display: none;">
+    <h2 id="categoryTitle"></h2>
+    <!-- Products will be loaded here dynamically -->
+</div>
+
+<script>
+    // Sample products data for each category
+    const productsData = {
+        electronics: [
+            { id: 1, name: "Laptop", price: 1000, img: "https://cdn.thewirecutter.com/wp-content/media/2024/07/laptopsunder500-2048px-5452.jpg" },
+            { id: 2, name: "I phone", price: 800, img: "https://inventstore.in/wp-content/uploads/2024/09/68-scaled.webp" },
+            { id: 3, name: "Headphones", price: 150, img: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQTR3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1687660671097" }
+        ],
+        clothing: [
+            { id: 1, name: "T-Shirt", price: 25, img: "https://images-cdn.ubuy.co.in/65e9180de0cdff4a6210fdaa-firovps-men-39-s-anime-printed.jpg" },
+            { id: 2, name: "Jeans", price: 40, img: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2024/DECEMBER/31/DGWNYRyd_80231d210ebc4d23bc168fd166936ce3.jpg" },
+            { id: 3, name: "Jacket", price: 60, img: "https://lh6.googleusercontent.com/proxy/V2EAMrmpfC__aT70xaoITsebAP8bpzt5JxqDz1aSQ4DM5n8ErH6_LgCbtZMTqRSSoTyHsZ2PagfgaeWzxiC9UHgxONAnL59k9qxPBLcv6repS0DAwyPbOUksJQ" }
+        ],
+        sports: [
+            { id: 1, name: "Bat", price: 50, img: "https://m.media-amazon.com/images/I/317VTY6RngL.jpg" },
+            { id: 2, name: "Basketball", price: 55, img: "https://m.media-amazon.com/images/I/81Km5JB6YcL.jpg" },
+            { id: 3, name: "Tennis Racket", price: 80, img: "https://thumb.ac-illust.com/97/977b3ec8e1947a7c7e36ce164609c6d1_t.jpeg" }
+        ],
+        home: [
+            { id: 1, name: "Steel Plate Stand", price: 100, img: "https://m.media-amazon.com/images/I/71Q9I-PKgIL.jpg" },
+            { id: 2, name: "Cup", price: 120, img: "https://media-uk.landmarkshops.in/cdn-cgi/image/h=750,w=750,q=85,fit=cover/homecentre/1000012532568-1000012532567_01-2100.jpg" },
+            { id: 3, name: "Vacuum Cleaner", price: 150, img: "https://m.media-amazon.com/images/I/51-NgiUucAL._AC_UF894,1000_QL80_.jpg" }
+        ]
+    };
+
+    // Show products for the selected category
+    function showProducts(category) {
+        // Set category title
+        document.getElementById("categoryTitle").innerText = category.charAt(0).toUpperCase() + category.slice(1);
+        
+        // Load products for the selected category
+        const products = productsData[category];
+        const productSection = document.getElementById("productSection");
+        productSection.innerHTML = '';  // Clear previous products
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('card', 'product-card');
+            productCard.innerHTML = `
+                <img src="${product.img}" class="card-img-top product-img" alt="${product.name}">
+                <div class="card-body">
+                    <h5 class="card-title product-title">${product.name}</h5>
+                    <p class="card-text product-price">$${product.price}</p>
+                    <button class="btn btn-warning" onclick="addToCart(${product.id}, '${category}')">Add to Cart</button>
+                </div>
+            `;
+            productSection.appendChild(productCard);
+        });
+
+        // Display the product section
+        productSection.style.display = 'block';
+    }
+
+    // Simulate adding product to the cart
+    function addToCart(productId, category) {
+        const product = productsData[category].find(product => product.id === productId);
+
+        // Get current cart from localStorage or initialize it if it's empty
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the selected product to the cart
+        cart.push(product);
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Redirect to the Cart page
+        window.location.href = 'cart.html';
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
